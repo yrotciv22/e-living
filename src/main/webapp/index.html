@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>e리빙 ~스마트기기의 모든 것~</title>
+		<link rel="stylesheet"   type="text/css"  href="css/footer.css">
+		<link rel="stylesheet"   type="text/css"  href="css/index.css">
+		<link rel="stylesheet"   type="text/css"  href="css/menu3.css">
+		<link rel="stylesheet"   type="text/css"  href="css/indexProduct.css">
+		<link rel="stylesheet"   type="text/css"  href="css/indexOpenrun.css">
+		<link rel="stylesheet"   type="text/css"  href="css/slideshow.css">
+		<link rel="stylesheet"   type="text/css"  href="css/productMap.css">
+		<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script> <!-- 이게 맨 위에 없으면 js 하나도 안 열림 -->
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/slideShow.js"></script> 
+		<script type="text/javascript" src="js/indexOpenrun.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<header>
+				<div id="headerBar">
+					<div id="topLogoBox"> 
+						<a href="index.html" id="logoItem">
+							<img alt="회사 로고" src="image/logo.png">
+						</a>
+					</div>
+					<div id="topMenuBox">
+						<div id="topMenuItem">
+							<ul id="topMenuList">  
+								<li id="topMenu1">
+									<span id="topLoginName"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+										<a href="html/login.html" id="adminInfo" target='_blank'>로그인</a>
+									</span>  <!-- 로그인에 성공한 경우 '님 환영합니다' 가리기 -->
+									<span id="topLoginGreet">님 환영합니다</span>
+								</li>
+								<li><a href="html/projectJoin3.html" id="topMenu2">회원가입</a></li> 
+								<li><a href="html/likeItem.html" id="topMenu3">찜바구니</a></li>
+								<li id="topLogOut"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="middleBar">
+					<div id="logoName">e리빙 ~스마트기기의 모든 것~</div>
+					<div id="searchBar">
+						<input type="text" placeholder="검색어를 입력해주세요" autofocus>
+						<button type="button">검색</button>
+					</div>
+				</div>
+			</header> <!-- 헤더 박스 종료 -->
+			<nav>
+				<div id="navigationBar">
+					<div id="mainCategoryBox"> 
+						<button class="dropbtn">
+							<img src="image/category.png" alt="카테고리">
+						</button>
+				   		<div class="dropdown-content">
+				   			<a href="index.html">홈 화면 가기</a>
+					    	<a href="html/productMap.html">전체 상품 보기</a>
+					    	<a href="html/openRun.html">오픈런 이벤트</a>
+					    	<a href="#">베스트셀러</a>
+					    	<a href="#">브랜드별 보기</a>
+					    	<a href="#">제품별 보기</a>
+					    	<a href="#">리뷰 많은 상품</a>	      		      		      
+				    	</div>
+					</div> 
+					<div id="mainMenuBox">
+						<div id="box1">
+							<ul id="mainMenuItem">
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu1">스마트폰</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu2">스마트워치</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu3">이어폰</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu4">액세서리</span></a></li>
+								<!-- 해당 버튼 클릭하면 mainMenuItem 리스트 변경 : 삼성, 애플, 구글, 샤오미 -->
+								<li><button id="brandSearchBtn">브랜드별 보기</button></li>
+								<!-- 브랜드별 리스트로 변경된 곳에 hover하면 이미지 뜨게 하기 -->
+							</ul>
+						</div>
+						<div id="box2">
+							<ul id="mainMenuItem">
+								<li><a href="#" class="mainMenuIcon"><img src="image/logo_samsung.png" id="brand_logo1"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="image/logo_apple.png" id="brand_logo2"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="image/logo_google.png" id="brand_logo3"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="image/logo_xiaomi.png" id="brand_logo4"></a></li>
+								<!-- 해당 버튼 클릭하면 mainMenuItem 리스트 변경 : 삼성, 애플, 구글, 샤오미 -->
+								<li><button type="button" id="brandSearchBtn">카테고리별 보기</button></li>
+								<!-- 브랜드별 리스트로 변경된 곳에 hover하면 이미지 뜨게 하기 -->
+							</ul>
+						</div>  
+					</div> 
+					<div id="mainBtnBox">
+						<ul id="mainBtnItem"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+							<li id="mainBtnCart" class="mainBtn"><a href="html/cartItem.html"><span id="mainBtnLoginId">admin님의 </span>장바구니</a></li>
+							<li id="mainBtnboard" class="mainBtn"><a href="html/projectQnA.html">게시판</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>  <!-- 네비게이션 바 종료 -->
+			<section>
+				
+				<!-- <div>
+					<div class="container">
+			            <div class="btn-box">
+		                	<a href="#modal01" class="btn-open" >
+		                		<span>열기</span>
+							</a>
+		                </div>
+					</div>
+		   		</div>
+
+		        modal 영역
+		  		<div class="modal-bg" onClick="javascript:popClose();"></div>
+		  			<div id="modal01" class="modal-wrap">
+		    			modal sample1111111111
+		    		<button class="modal-close">닫기</button>
+		        </div>
+		        //modal 영역 -->
+				
+				<article class="contents" id="slideshowWrap">
+					<div id="slideshow" class="contentBox">
+						<br><br><span class="h1SizeUp"> NEW! 새로 발매된 브랜드 제품 💡 </span>
+						<br><br><br><br>
+						<div id = "prevNextButtonBox">
+							<img id="prevButton" src="image/prevButton.png">
+							<img id="nextButton" src="image/nextButton.png">
+						</div>
+						<div id="slideShowBox">
+							<div id="slidePanel">
+								<img src="image/banner1.png" class="slideImage">
+								<img src="image/banner2.png" class="slideImage">
+								<img src="image/banner3.png" class="slideImage">
+								<img src="image/banner4.png" class="slideImage">
+							</div> 
+						</div>			
+						<div id="controlPanel">
+							<img src="image/controlButton1.png" class="controlButton">
+							<img src="image/controlButton1.png" class="controlButton">
+							<img src="image/controlButton1.png" class="controlButton">
+							<img src="image/controlButton1.png" class="controlButton">
+						</div>
+					</div>
+				</article> <!-- 슬라이드 쇼 박스 종료 -->
+				<article class="contents">
+					<div id="openrunBox">
+						<span class="h1SizeUp"> 오픈런 특가 이벤트 🕔 </span><br><br> 
+						<h5> 망설이다가 늦었다고 생각했을 때가 정말 늦어요! </h5><br><br> 
+						<div id="openrunBoxItem">
+							<div id="openrunBoxOut">
+								<div id="openrunItem1">
+									<!-- 동적으로 타이머 생성되는 자리 -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</article> <!-- 오픈런 이벤트 박스 종료 -->
+				<article class="contents" id="bestReviewBox">
+					<div id="productBox1" class="contentBox">
+						<span class="h1SizeUp"> 리뷰가 많은 제품 BEST 📝 </span>
+						<div class='productItemList'>
+							<div class='productItem'> <!-- 특정 제품 id 4개 선택하여 해당 제품의 제품명 가져오기-->
+								<a href='#'><img src="image/phone_galaxy24ultra_1.jpg"></a>
+								<div class="productItemName"><a href='#'>삼성 갤럭시 24 울트라</a></div>
+								<div class="reviewBest">콘서트 갈 때 유용해요</div>
+							</div>
+							<div class='productItem'>
+								<a href='#'><img src="image/phone_iphone15pro_1.jpg"></a>
+								<div class="productItemName"><a href='#'>애플 아이폰 15 프로</a></div>
+								<div class="reviewBest">1차 출시라서 바로 샀네용</div>
+							</div>
+							<div class='productItem'>
+								<a href='#'><img src="image/phone_pixel8_1.jpg"></a>
+								<div class="productItemName"><a href='#'>구글 픽셀 8</a></div>
+								<div class="reviewBest">직구 기다린 보람이 있다</div>
+							</div>
+							<div class='productItem'> 
+								<a href='#'><img src="image/phone_xiaomi14_1.jpg"></a>
+								<div class="productItemName"><a href='#'>샤오미 14</a></div>
+								<div class="reviewBest">가성비 갑 샤오미 탕탕</div>
+							</div>
+						</div>
+					</div>
+				</article> <!-- 리뷰 베스트 상품 소개 박스 종료 -->
+				<article class="contents">
+					<div id="productBox2" class="contentBox">
+						<span class="h1SizeUp"> 이어폰 베스트셀러 🎧 </span>
+						<div class='productItemList'>
+							<div class='productItem'>
+								<a href='html/detail.html'><img src="image/earp-1-2.jpg"></a>
+								<div class="productItemName"><a href='html/detail.html'>에어팟 3세대</a></div>
+							</div>
+							<div class='productItem'> 
+								<a href='#'><img src="image/earp-3-2.jpg"></a>
+								<div class="productItemName"><a href='#'>Beats 레드</a></div>
+							</div>
+							<div class='productItem'>
+								<a href='#'><img src="image/earp-11.jpg"></a>
+								<div class="productItemName"><a href='#'>삼성 커널형 인이어 SES-G20</a></div>
+							</div>
+							<div class='productItem'> <!-- 특정 제품 id 4개 선택하여 해당 제품의 제품명 가져오기-->
+								<a href='#'><img src="image/earp-8-2.jpg"></a>
+								<div class="productItemName"><a href='#'>갤럭시 버즈2 프로</a></div>
+							</div>
+						</div>
+					</div>
+				</article> <!-- 추천 상품 소개 박스 종료 -->
+				<article class="contents">
+					<div id="productBox3" class="contentBox">
+						<span class="h1SizeUp"> 스마트폰 베스트셀러 📱 </span>
+						<div class='productItemList'>
+							<div class='productItem'>
+								<a href='#'><img src="image/phone_pixel8_2.jpg"></a>
+								<div class="productItemName"><a href='#'>구글 픽셀 8</a></div>
+							</div>
+							<div class='productItem'> 
+								<a href='#'><img src="image/phone_xiaomi14_2.jpg"></a>
+								<div class="productItemName"><a href='#'>샤오미 14</a></div>
+							</div>
+							<div class='productItem'>
+								<a href='#'><img src="image/phone_iphone15pro_2.jpg"></a>
+								<div class="productItemName"><a href='#'>애플 아이폰 15 프로</a></div>
+							</div>
+							<div class='productItem'> <!-- 특정 제품 id 4개 선택하여 해당 제품의 제품명 가져오기-->
+								<a href='#'><img src="image/phone_galaxy24ultra_2.jpg"></a>
+								<div class="productItemName"><a href='#'>삼성 갤럭시 24 울트라</a></div>
+							</div>
+						</div>
+					</div>
+				</article> <!-- 추천 상품 소개 박스 종료 -->
+				<article class="contents">
+					<div id="productBox4" class="contentBox">
+						<span class="h1SizeUp"> 스마트워치 베스트셀러 ⏱ </span>
+						<div class='productItemList'>
+							<div class='productItem'>
+								<a href='#'><img src="image/watch_삼성2.png"></a>
+								<div class="productItemName"><a href='#'>삼성 갤럭시 워치6</a></div>
+							</div>
+							<div class='productItem'> 
+								<a href='#'><img src="image/watch_애플2.png"></a>
+								<div class="productItemName"><a href='#'>애플워치 SE</a></div>
+							</div>
+							<div class='productItem'>
+								<a href='#'><img src="image/watch_샤오미2.png"></a>
+								<div class="productItemName"><a href='#'>샤오미 워치</a></div>
+							</div>
+						</div>
+					</div>
+				</article> <!-- 추천 상품 소개 박스 종료 -->
+				<article class="contents">
+					<div id="productBox5" class="contentBox">
+						<span class="h1SizeUp"> 악세서리 베스트셀러 💍 </span>
+						<div class='productItemList'>
+							<div class='productItem'>
+								<a href='#'><img src="image/acc_스마트링2.jpg"></a>
+								<div class="productItemName"><a href='#'>신지모루 스마트링 링고미니 핸드폰 거치대</a></div>
+							</div>
+							<div class='productItem'> 
+								<a href='#'><img src="image/acc_카드케이스2.jpg"></a>
+								<div class="productItemName"><a href='#'>[아이폰] 범퍼 강화 4DX 에어팁 카드 수납 케이스</a></div>
+							</div>
+							<div class='productItem'>
+								<a href='#'><img src="image/acc_범퍼케이스2.jpg"></a>
+								<div class="productItemName"><a href='#'>[갤럭시] 클리어 범퍼 젤리 휴대폰 케이스</a></div>
+							</div>
+							<div class='productItem'> <!-- 특정 제품 id 4개 선택하여 해당 제품의 제품명 가져오기-->
+								<a href='#'><img src="image/acc_충전기2.jpg"></a>
+								<div class="productItemName"><a href='#'>서가 2포트 C타입 초고속 충전기케이블 1.5m 세트</a></div>
+							</div>
+						</div>
+					</div>
+				</article> <!-- 추천 상품 소개 박스 종료 -->
+			</section>
+			<div class="bigbox">
+			    <div id="footer" class="bigbox2">
+			        <div class="bigbox3">
+			
+			            <div class="leftbox1">
+			                <p class="callcentertext">문의센터</p>
+			                <strong class="centernumber"> 0000-0000
+			                    <span class="centerrest">휴무일 월~일요일 00시 - 24시</span>
+			                </strong>
+			                <div class="leftbox2">
+			                    <div class="leftbox3">
+			                        <button class="btn">카카오톡 문의</button>
+			                        <div class="leftbox4">월~토요일 | 오전 7시 - 오후 6시
+			                            <br>
+			                            일/공휴일 | 오전 7시 - 오후 1시
+			                        </div>
+			                    </div>
+			                    <div class="leftbox3">
+			                        <button class="leftbox5">1:1 문의</button>
+			                        <div class="leftbox4">
+			                            365일
+			                            <br>
+			                            고객센터 운영시간에 순차적으로 답변드리겠습니다.
+			                        </div>
+			                    </div>
+			                </div>
+			
+			                <div class="leftlasttext">비회원 문의 : help@eliving.com
+			                </div>
+			            </div>
+			
+			            <div class="rightbox1">
+			                <ul class="rightul1">
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">e리빙소개</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">e리빙소개영상</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">이용약관</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext" style=font-weight:bold;>개인정보처리방침</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">이용안내</a>
+			                    </li>
+			                </ul>
+			                <div class="rightbox2">
+			                    법인명 (상호) : 주식회사 e리빙 | 사업자등록번호 : 000-00-00000
+			                    <a href="#" class="checktext">사업자정보 확인</a>
+			                    <br>
+			                    통신판매업 : 제 0000-서울OO-01000 호
+			                    <br>
+			                    주소 : 멀티캠퍼스 강남빌딩 | 대표이사 : 이준기
+			                    <br>
+			                    채용문의 :
+			                    <a href="www.naver.com" class="checktext">recruit@eliving.com</a>
+			                    <br>
+			                    팩스: 000 - 0000 - 0000
+			                </div><!-- rightbox2 -->
+			            </div><!-- rightbox1 -->
+			        </div><!-- bigbox3 -->
+			    </div><!-- bigbox2 -->
+			
+			    <div class="lastbox1">
+			        e리빙에서 판매되는 상품 중에는 e리빙에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+			        <br>
+			        마켓플레이스(오픈마켓) 상품의 경우 e리빙은 통신판매중개자로서 통신판매의 당사자가 아닙니다. e리빙은 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
+			        <em class="lastbox2">
+			            © eliving CORP. ALL RIGHTS RESERVED
+			        </em><!-- 이거는 초반에 배운 글씨 기울이는 이태릭 태그, 근데 기울지 않는 듯 -->
+			
+			    </div>
+			</div> <!-- footer 박스 종료 -->	  
+			<footer>
+				<div>
+					<div id="moveToTopBox"><img src="image/moveToTop.png" id="moveToTop"></div>
+				</div>
+			</footer> <!-- top 버튼용 footer 박스 종료 -->	  
+		</div>
+	</body>
+</html>

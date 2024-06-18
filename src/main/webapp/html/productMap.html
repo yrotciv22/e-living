@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>전체 상품 보기 | e 리빙</title>
+		<link rel="icon" type="image/png" href="#" />
+		<link rel="stylesheet"   type="text/css"  href="../css/common.css">
+		<link rel="stylesheet"   type="text/css"  href="../css/footer.css">
+		<link rel="stylesheet"   type="text/css"  href="../css/index.css">
+		<link rel="stylesheet"   type="text/css"  href="../css/menu3.css">
+		<link rel="stylesheet"   type="text/css"  href="../css/productMap.css">
+		<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
+		<script type="text/javascript" src="../js/productMap.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<header>
+				<div id="headerBar">
+					<div id="topLogoBox"> 
+						<a href="../index.html" id="logoItem">
+							<img alt="회사 로고" src="../image/logo.png">
+						</a>
+					</div>
+					<div id="topMenuBox">
+						<div id="topMenuItem">
+							<ul id="topMenuList"> 
+								<li id="topMenu1">
+									<span id="topLoginName"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+										<a href="#" id="adminInfo">admin님 환영합니다</a>
+									</span>  <!-- 로그인에 성공한 경우 '님 환영합니다' 가리기 -->
+									<span id="topLoginGreet">님 환영합니다</span>
+								</li>
+								<!-- <li><a href="#" id="topMenu2">회원가입</a></li>  -->
+								<li><a href="likeItem.html" id="topMenu3">찜바구니</a></li>
+								<li id="topLogOut">로그아웃</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="middleBar">
+					<div id="logoName">e리빙 ~스마트기기의 모든 것~</div>
+					<div id="searchBar">
+						<input type="text" placeholder="검색어를 입력해주세요" autofocus>
+						<button onclick="">검색</button>
+					</div>
+				</div>
+			</header>
+			<nav>
+				<div id="navigationBar">
+					<div id="mainCategoryBox"> 
+						<button class="dropbtn">
+							<img src="../image/category.png" alt="카테고리">
+						</button>
+				   		<div class="dropdown-content">
+				   			<a href="../index.html">홈 화면 가기</a>
+					    	<a href="#">오픈런 이벤트</a>
+					    	<a href="#">베스트셀러</a>
+					    	<a href="#">브랜드별 보기</a>
+					    	<a href="#">제품별 보기</a>
+					    	<a href="#">리뷰 많은 상품</a>	      		      		      
+				    	</div>
+					</div> 
+					<div id="mainMenuBox">
+						<div id="box1">
+							<ul id="mainMenuItem">
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu1">스마트폰</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu2">스마트워치</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu3">이어폰</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu4">액세서리</span></a></li>
+								<!-- 해당 버튼 클릭하면 mainMenuItem 리스트 변경 : 삼성, 애플, 구글, 샤오미 -->
+								<li><button id="brandSearchBtn">브랜드별 보기</button></li>
+								<!-- 브랜드별 리스트로 변경된 곳에 hover하면 이미지 뜨게 하기 -->
+							</ul>
+						</div>
+						<div id="box2">
+							<ul id="mainMenuItem">
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_samsung.png" id="brand_logo1"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_apple.png" id="brand_logo2"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_google.png" id="brand_logo3"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_xiaomi.png" id="brand_logo4"></a></li>
+								<!-- 해당 버튼 클릭하면 mainMenuItem 리스트 변경 : 삼성, 애플, 구글, 샤오미 -->
+								<li><button type="button" id="brandSearchBtn">카테고리별 보기</button></li>
+								<!-- 브랜드별 리스트로 변경된 곳에 hover하면 이미지 뜨게 하기 -->
+							</ul>
+						</div>  
+					</div> 
+					<div id="mainBtnBox">
+						<ul id="mainBtnItem"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+							<li id="mainBtnCart" class="mainBtn"><a href="cartItem.html"><span id="mainBtnLoginId">admin님의 </span>admin님의 장바구니</a></li>
+							<li id="mainBtnboard" class="mainBtn"><a href="projectQnA.html">게시판</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav> <!-- 네비게이션 바 종료 -->
+			<section>
+				<div id="filterBox"> <!-- 왼쪽 박스 : 특정 조건 만족하는 제품만 확인하기 -->
+					<div id="filterTitleBox">
+						<p id="filterTitle1">전체 상품 보기<p>
+						<p id="filterTitle2">필요한 상품만 골라서 볼 수 있어요<p><br>
+					</div>
+					<div id="filterMainBox" class="productMain">
+						<div id="filterList"> <!-- 제품 선별 조건 리스트 : 체크박스 -->
+							<ul id="filterListItem">
+								<li class="filterDetail" id="filterItem0">
+									<h1>필터</h1>
+									<button type="button" id="filterReset">선택 초기화</button> 
+								</li>
+								<li class="filterDetail" id="filterItem1">
+									<fieldset class="filterNameList">
+										<legend>카테고리 선택</legend>
+										<span>
+											<label for="checkCategory1">스마트폰</label>
+											<input type="checkbox" name="checkCategory" id="checkCategory1" value="phone">
+										</span>
+										<span>
+											<label for="checkCategory2">스마트워치</label>
+											<input type="checkbox" name="checkCategory" id="checkCategory2" value="watch">
+										</span>
+										<span>
+											<label for="checkCategory3">이어폰</label>
+											<input type="checkbox" name="checkCategory" id="checkCategory3" value="earphone">
+										</span>
+										<span>
+											<label for="checkCategory4">악세사리</label>
+											<input type="checkbox" name="checkCategory" id="checkCategory4" value="acc">
+										</span>
+									</fieldset>
+								</li>
+								<li class="filterDetail" id="filterItem2">
+									<fieldset class="filterNameList">
+										<legend>발매년도</legend>
+										<span>
+											<label for="checkYear1">2024</label>
+											<input type="checkbox" name="checkYear" id="checkYear1" value="thisYear">
+										</span>
+										<span>
+											<label for="checkYear2">2023</label>
+											<input type="checkbox" name="checkYear" id="checkYear2" value="lastYear">
+										</span>
+										<span>
+											<label for="checkYear3">그 외</label>
+											<input type="checkbox" name="checkYear" id="checkYear3" value="etcYear">
+										</span>
+									</fieldset>
+								</li>
+								<li class="filterDetail" id="filterItem3"> 
+									<fieldset class="filterNameList">
+										<legend>브랜드</legend>
+										<span>
+											<label for="checkBrand1">삼성</label>
+											<input type="checkbox" name="checkBrand" id="checkBrand1" value="samsung">
+										</span>
+										<span> 
+											<label for="checkBrand2">애플</label>
+											<input type="checkbox" name="checkBrand" id="checkBrand2" value="apple">
+										</span>
+										<span>
+											<label for="checkBrand3">구글</label>
+											<input type="checkbox" name="checkBrand" id="checkBrand3" value="google">
+										</span>
+										<span>
+											<label for="checkBrand4">샤오미</label>
+											<input type="checkbox" name="checkBrand" id="checkBrand4" value="xiaomi">
+										</span>
+										<span>
+											<label for="checkBrand5">Beats</label>
+											<input type="checkbox" name="checkBrand" id="checkBrand5" value="motorola">
+										</span>
+										<span>
+											<label for="checkBrand5">그 외</label>
+											<input type="checkbox" name="checkBrand" id="checkBrand5" value="etcBrand">
+										</span>
+									</fieldset>
+								</li>
+								<li class="filterDetail" id="filterItem4"> 
+									<fieldset class="filterNameList">
+										<legend>스마트폰 사이즈</legend>
+										<span>
+											<label for="checkSize1">6.5인치 이상</label>
+											<input type="checkbox" name="checkSize" id="checkSize1" value="maxSize">
+										</span>
+										<span>
+											<label for="checkSize2">6인치 이상</label>
+											<input type="checkbox" name="checkSize" id="checkSize2" value="midSize">
+										</span>
+										<span>
+											<label for="checkSize3">그 외</label>
+											<input type="checkbox" name="checkSize" id="checkSize3" value="etcSize">
+										</span>
+									</fieldset>
+								</li>
+								<li class="filterDetail" id="filterItem5">
+									<fieldset class="filterNameList">
+										<legend>스마트워치 사이즈</legend>
+										<span>
+											<label for="checkWatch1">45mm 이상</label>
+											<input type="checkbox" name="checkWatch" id="checkWatch1" value="maxSize">
+										</span>
+										<span>
+											<label for="checkWatch2">45mm 이하</label>
+											<input type="checkbox" name="checkWatch" id="checkWatch2" value="midSize">
+										</span>
+										<span>
+											<label for="checkWatch3">그 외</label>
+											<input type="checkbox" name="checkWatch" id="checkWatch3" value="etcSize">
+										</span>
+									</fieldset>
+								</li>
+								<li class="filterDetail" id="filterItem6">
+									<fieldset class="filterNameList">
+										<legend>악세사리 종류</legend>
+										<span>
+											<label for="checkAcc1">스마트폰 케이스</label>
+											<input type="checkbox" name="checkAcc" id="checkAcc1" value="bumperCase">
+										</span>
+										<span>
+											<label for="checkAcc2">스마트링</label>
+											<input type="checkbox" name="checkAcc" id="checkAcc2" value="ring">
+										</span>
+										<span>
+											<label for="checkAcc3">카드 케이스</label>
+											<input type="checkbox" name="checkAcc" id="checkAcc3" value="cardCase">
+										</span>
+										<span>
+											<label for="checkAcc4">충전기</label>
+											<input type="checkbox" name="checkAcc" id="checkAcc4" value="charger">
+										</span>
+									</fieldset>
+								</li>
+							</ul>
+						</div> <!-- 왼쪽 박스 종료 -->
+						<div id="productMapBox" class="productMain"> <!-- 오른쪽 박스 -->
+							<div id="productMapInside">
+								<div id="productSortBox"> <!-- 오른쪽 전체 상품 보기 -> 상단 바 : 총 상품 수량, 정렬 버튼 -->
+									<div id="productQuantity">총 16건</div>
+									<div id="productSortTool">
+										<div id="sortToolBox">
+											<div id="sortToolList">
+												<label><input type="radio" class="sortToolRadio" name="sortTool" value="new"/>신상품순</label>
+												<label><input type="radio" class="sortToolRadio" name="sortTool" value="bestseller"/>판매량순</label>
+												<label><input type="radio" class="sortToolRadio" name="sortTool" value="descending"/>높은 가격순</label>
+												<label><input type="radio" class="sortToolRadio" name="sortTool" value="ascending"/>낮은 가격순</label>
+												<label><input type="radio" class="sortToolRadio" name="sortTool" value="review"/>리뷰 많은순</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="productContainer"> <!-- 오른쪽 전체 상품 보기 -> 하단 상품 펼쳐보기 박스 -->
+									<div id="productItem1" class="productItems brandSamsungItem">
+										<div class="productImageBox productWatchList">
+											<img alt="삼성갤럭시워치6" src="../image/watch_삼성1.png">
+										</div> 
+										<div>	
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">삼성 갤럭시 워치6</div>
+											<div class="productPriceBox"><span class="discountPrice">226,400원</span><br>
+												<span class="discountPriceRate">7%</span><span>219,999</span>원</div>
+										</div>
+									</div>
+									<div id="productItem2" class="productItems brandAppleItem">
+										<div class="productImageBox productWatchList">
+											<img alt="애플워치se" src="../image/watch_애플1.png">
+										</div> 
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒 </button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">애플워치 SE</div>
+											<div class="productPriceBox"><span class="discountPrice">329,000원</span><br>
+												<span class="discountPriceRate">23%</span><span>278,000</span>원</div>
+										</div>
+									</div>
+									<div id="productItem3" class="productItems">
+										<div class="productImageBox productWatchList">
+											<img alt="샤오미워치" src="../image/watch_샤오미1.png">
+										</div>
+										<div>
+											<button onclick="location.href='cartItem.html'" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">샤오미 워치</div>
+											<div class="productPriceBox"><span>99,000</span>원</div>
+										</div>
+									</div>
+									<div id="productItem4" class="productItems brandAppleItem">
+										<div class="productImageBox productEarList">
+											<img alt="에어팟3세대" src="../image/earp-1-1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">에어팟 3세대</div>
+											<div class="productPriceBox"><span>269,000</span>원</div>
+										</div>
+									</div>
+									<div id="productItem5" class="productItems">
+										<div class="productImageBox productEarList">
+											<img alt="beats레드" src="../image/earp-3-1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">Beats 레드</div>
+											<div class="productPriceBox"><span>199,000</span>원</div>
+										</div>
+									</div>
+									<div id="productItem6" class="productItems brandSamsungItem">
+										<div class="productImageBox productEarList">
+											<img alt="삼성커널형인이어ses-g20" src="../image/earp-11.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">삼성 커널형 인이어 SES-G20</div>
+											<div class="productPriceBox"><span>269,000</span>원</div>
+										</div>
+									</div>
+									<div id="productItem7" class="productItems brandAppleItem">
+										<div class="productImageBox productEarList">
+											<img alt="earpods" src="../image/earp-6.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">Earpods 이어팟</div>
+											<div class="productPriceBox"><span>28,000</span>원</div>
+										</div>
+									</div>
+									<div id="productItem8" class="productItems brandSamsungItem">
+										<div class="productImageBox productEarList">
+											<img alt="갤럭시버즈2프로" src="../image/earp-8-1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">갤럭시 버즈2 프로</div>
+											<div class="productPriceBox"><span>175,260</span>원</div>
+										</div>
+									</div>
+									<div id="productItem9" class="productItems">
+										<div class="productImageBox productAccList">
+											<img alt="신지모루스마트링링고미니거치대" src="../image/acc_스마트링1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">신지모루 스마트링 링고미니 거치대</div>
+											<div class="productPriceBox"><span>9,730</span>원</div>
+										</div>
+									</div>
+									<div id="productItem10" class="productItems brandAppleItem">
+										<div class="productImageBox productAccList">
+											<img alt="범퍼강화4DX에어팁카드수납아이폰케이스" src="../image/acc_카드케이스1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">[아이폰] 범퍼 강화 4DX 에어팁 카드 수납 케이스</div>
+											<div class="productPriceBox"><span>8,900</span>원</div>
+										</div>
+									</div>
+									<div id="productItem11" class="productItems brandSamsungItem">
+										<div class="productImageBox productAccList">
+											<img alt="클리어범퍼젤리휴대폰케이스갤럭시" src="../image/acc_범퍼케이스1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">[갤럭시] 클리어 범퍼 젤리 휴대폰 케이스</div>
+											<div class="productPriceBox"><span>6,500</span>원</div>
+										</div>
+									</div>
+									<div id="productItem12" class="productItems">
+										<div class="productImageBox productAccList">
+											<img alt="서가2포트C타입초고속충전케이블1.5m세트" src="../image/acc_충전기1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">서가 2포트 C타입 초고속 충전기케이블 1.5m 세트</div>
+											<div class="productPriceBox"><span>19,890</span>원</div>
+										</div>
+									</div>
+									<div id="productItem13" class="productItems">
+										<div class="productImageBox productPhoneList">
+											<img alt="샤오미14" src="../image/phone_xiaomi14_1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">샤오미 14</div>
+											<div class="productPriceBox"><span>1,064,860</span>원</div>
+										</div>
+									</div>
+									<div id="productItem14" class="productItems brandSamsungItem">
+										<div class="productImageBox productPhoneList">
+											<img alt="갤럭시S24Ultra" src="../image/phone_galaxy24ultra_1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">갤럭시 S24 울트라 프로</div>
+											<div class="productPriceBox"><span>1,698,400</span>원</div>
+										</div>
+									</div>
+									<div id="productItem15" class="productItems">
+										<div class="productImageBox productPhoneList">
+											<img alt="구글픽셀8" src="../image/phone_pixel8_1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">구글 픽셀8</div>
+											<div class="productPriceBox"><span>1,186,000</span>원</div>
+										</div>
+									</div>
+									<div id="productItem16" class="productItems brandAppleItem">
+										<div class="productImageBox productPhoneList">
+											<img alt="애플아이폰15Pro" src="../image/phone_iphone15pro_1.jpg">
+										</div>
+										<div>
+											<button onclick="" class="addCartButton"> 장바구니에 담기 🛒</button> 
+										</div>
+										<div class="productDetailBox">
+											<div class="productNameBox">애플 아이폰15 프로</div>
+											<div class="productPriceBox"><span>1,700,000</span>원</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+  			<div class="bigbox">
+			    <div id="footer" class="bigbox2">
+			        <div class="bigbox3">
+			
+			            <div class="leftbox1">
+			                <p class="callcentertext">문의센터</p>
+			                <strong class="centernumber"> 0000-0000
+			                    <span class="centerrest">휴무일 월~일요일 00시 - 24시</span>
+			                </strong>
+			                <div class="leftbox2">
+			                    <div class="leftbox3">
+			                        <button class="btn">카카오톡 문의</button>
+			                        <div class="leftbox4">월~토요일 | 오전 7시 - 오후 6시
+			                            <br>
+			                            일/공휴일 | 오전 7시 - 오후 1시
+			                        </div>
+			                    </div>
+			                    <div class="leftbox3">
+			                        <button class="leftbox5">1:1 문의</button>
+			                        <div class="leftbox4">
+			                            365일
+			                            <br>
+			                            고객센터 운영시간에 순차적으로 답변드리겠습니다.
+			                        </div>
+			                    </div>
+			                </div>
+			
+			                <div class="leftlasttext">비회원 문의 : help@eliving.com
+			                </div>
+			            </div>
+			
+			            <div class="rightbox1">
+			                <ul class="rightul1">
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">e리빙소개</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">e리빙소개영상</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">이용약관</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext" style=font-weight:bold;>개인정보처리방침</a>
+			                    </li>
+			                    <li class="rightli">
+			                        <a href="#" class="rightlitext">이용안내</a>
+			                    </li>
+			                </ul>
+			                <div class="rightbox2">
+			                    법인명 (상호) : 주식회사 e리빙 | 사업자등록번호 : 000-00-00000
+			                    <a href="#" class="checktext">사업자정보 확인</a>
+			                    <br>
+			                    통신판매업 : 제 0000-서울OO-01000 호
+			                    <br>
+			                    주소 : 멀티캠퍼스 강남빌딩 | 대표이사 : 이준기
+			                    <br>
+			                    채용문의 :
+			                    <a href="www.naver.com" class="checktext">recruit@eliving.com</a>
+			                    <br>
+			                    팩스: 000 - 0000 - 0000
+			                </div><!-- rightbox2 -->
+			            </div><!-- rightbox1 -->
+			        </div><!-- bigbox3 -->
+			    </div><!-- bigbox2 -->
+			
+			    <div class="lastbox1">
+			        e리빙에서 판매되는 상품 중에는 e리빙에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+			        <br>
+			        마켓플레이스(오픈마켓) 상품의 경우 e리빙은 통신판매중개자로서 통신판매의 당사자가 아닙니다. e리빙은 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
+			        <em class="lastbox2">
+			            © eliving CORP. ALL RIGHTS RESERVED
+			        </em><!-- 이거는 초반에 배운 글씨 기울이는 이태릭 태그, 근데 기울지 않는 듯 -->
+			
+			    </div>
+			</div>
+			<footer>
+				<div>
+					<div id="moveToTopBox"><img src="../image/moveToTop.png" id="moveToTop"></div>
+				</div>
+			</footer> <!-- top 버튼용 footer 박스 종료 -->	
+		</div>
+	</body>
+</html>

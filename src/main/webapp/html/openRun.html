@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>오픈런 | e리빙</title>
+		<link rel="icon" type="image/png" href="#" />
+		<link rel='stylesheet' type='text/css' href="../css/footer.css">
+		<link rel='stylesheet' type='text/css' href="../css/menu3.css">
+		<link rel='stylesheet' type='text/css' href="../css/openRun.css">
+		<link rel='stylesheet' type='text/css' href="../css/index.css">
+		<script src="../js/jquery-3.7.1.min.js"></script>
+		<script src="../js/index.js"></script>
+		<script src="../js/openRun.js"></script>
+		<script src="../js/timer.js"></script>
+	</head>
+	<body>
+		<header>
+				<div id="headerBar">
+					<div id="topLogoBox"> 
+						<a href="../index.html" id="logoItem">
+							<img alt="회사 로고" src="../image/logo.png">
+						</a>
+					</div>
+					<div id="topMenuBox">
+						<div id="topMenuItem">
+							<ul id="topMenuList"> 
+								<li id="topMenu1">
+									<span id="topLoginName"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+										<a href="#" id="adminInfo">로그인</a>
+									</span>  <!-- 로그인에 성공한 경우 '님 환영합니다' 가리기 -->
+									<span id="topLoginGreet">님 환영합니다</span>
+								</li>
+								<li><a href="projectJoin3.html" id="topMenu2">회원가입</a></li> 
+								<li><a href="cartItem.html" id="topMenu3">찜바구니</a></li>
+								<li id="topLogOut"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="middleBar">
+					<div id="logoName">e리빙 ~스마트기기의 모든 것~</div>
+					<div id="searchBar">
+						<input type="text" placeholder="검색어를 입력해주세요" autofocus>
+						<button onclick="">검색</button>
+					</div>
+				</div>
+			</header>
+			<nav>
+				<div id="navigationBar">
+					<div id="mainCategoryBox"> 
+						<button class="dropbtn">
+							<img src="../image/category.png" alt="카테고리">
+						</button>
+				   		<div class="dropdown-content">
+				   			<a href="../index.html">홈 화면 가기</a>
+					    	<a href="#">오픈런 이벤트</a>
+					    	<a href="#">베스트셀러</a>
+					    	<a href="#">브랜드별 보기</a>
+					    	<a href="#">제품별 보기</a>
+					    	<a href="#">리뷰 많은 상품</a>	      		      		      
+				    	</div>
+					</div> 
+					<div id="mainMenuBox">
+						<div id="box1">
+							<ul id="mainMenuItem">
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu1">스마트폰</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu2">스마트워치</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu3">이어폰</span></a></li>
+								<li><a href="#" class="mainMenuIcon"><span id="mainMenu4">액세서리</span></a></li>
+								<!-- 해당 버튼 클릭하면 mainMenuItem 리스트 변경 : 삼성, 애플, 구글, 샤오미 -->
+								<li><button id="brandSearchBtn">브랜드별 보기</button></li>
+								<!-- 브랜드별 리스트로 변경된 곳에 hover하면 이미지 뜨게 하기 -->
+							</ul>
+						</div>
+						<div id="box2">
+							<ul id="mainMenuItem">
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_samsung.png" id="brand_logo1"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_apple.png" id="brand_logo2"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_google.png" id="brand_logo3"></a></li>
+								<li><a href="#" class="mainMenuIcon"><img src="../image/logo_xiaomi.png" id="brand_logo4"></a></li>
+								<!-- 해당 버튼 클릭하면 mainMenuItem 리스트 변경 : 삼성, 애플, 구글, 샤오미 -->
+								<li><button type="button" id="brandSearchBtn">카테고리별 보기</button></li>
+								<!-- 브랜드별 리스트로 변경된 곳에 hover하면 이미지 뜨게 하기 -->
+							</ul>
+						</div>  
+					</div> 
+					<div id="mainBtnBox">
+						<ul id="mainBtnItem"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+							<li id="mainBtnCart" class="mainBtn"><a href="cartItem.html"><span id="mainBtnLoginId">admin님의 </span>장바구니</a></li>
+							<li id="mainBtnboard" class="mainBtn"><a href="projectQnA.html">게시판</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav> <!-- 네비게이션 바 종료 -->
+		<div id='wrap'>
+			<div id='topSection'>
+				<div><img src="../image/메인카드.png"></div>
+			</div>
+			<div id='bodySection'>
+				<div id='roundBox'>
+					<table>
+					<td id='firstRound'>1차 종료</td>
+					<td id='secondRound'><a href='#mainImg'>2차</a></td>
+					<td id='thirdRound' onclick='location.href= "#NotificationBtn"'>3차 comingsoon</td>
+					</table>
+				</div>
+				<div id='timerBox'>
+					<span id='timerText'>종료까지 남은 시간</span>
+					<div id='timer'></div>
+				</div>
+				<div id='mainPrd'>
+					<img src="../image/아이폰 프로 15 누끼버전.png" id='mainImg'>
+					<!-- <img src="../image/아이폰 프로 15-2 누끼버전.png" id='mainImg2'> -->
+					<h1>아이폰15프로<br>반값 특가</h1><p>50% 1,000,000<br>사은품 증정 택1</p>
+				</div>
+				<div id='freeGiftBox'>
+					<div><img id='freeGift1' src="../image/acc_충전기1.png"></div>
+					<div><img id='freeGift2' src="../image/acc_카드케이스3.png"></div>
+				</div>
+			</div>
+			<div id='footerSection'>
+				<div id='footerBox'>
+					<p>3차 최종 프로젝트<br>coming soon!</p>
+					<p id='footerDate'>2024. 07. 24 </p>
+					<div id='NotificationBtn'><a href='#'>사전 예약 참여하기</a></div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="bigbox">
+			  	<div id="footer" class="bigbox2">
+			  		<div class="bigbox3">
+				    <div class="leftbox1">
+				  	    <p class="callcentertext">문의센터</p>
+				  		<strong class="centernumber"> 0000-0000
+				  			<span class="centerrest">휴무일 월~일요일 00시 - 24시</span>
+				  		</strong>
+				  		<div class="leftbox2">
+				  			<div class="leftbox3">
+				  				<button class="btn">카카오톡 문의</button>
+				  				<div class="leftbox4">월~토요일 | 오전 7시 - 오후 6시
+				  				<br>
+				  				일/공휴일 | 오전 7시 - 오후 1시
+				  				</div>
+				  			</div>
+				  			<div class="leftbox3">
+				  				<button class="leftbox5">1:1 문의</button>
+				  				<div class="leftbox4">
+				  				365일
+				  				<br>
+				  				고객센터 운영시간에 순차적으로 답변드리겠습니다.
+				  				</div>
+				  			</div>
+				  		</div>
+				  		
+				  		<div class="leftlasttext">비회원 문의 : help@eliving.com
+				  		</div>
+			  	</div>
+			  	
+			  	<div class="rightbox1">
+			  		<ul class="rightul1">
+			  			<li class="rightli">
+			  				<a href="#" class="rightlitext">e리빙소개</a>
+			  				</li>
+			  			<li class="rightli">
+			  				<a href="#" class="rightlitext">e리빙소개영상</a>
+			  			</li>
+			  			<li class="rightli">
+			  				<a href="#" class="rightlitext">이용약관</a>
+			  			</li>
+			  			<li class="rightli">
+			  				<a href="#" class="rightlitext" style=font-weight:bold;>개인정보처리방침</a>
+			  			</li>
+			  			<li class="rightli">
+			  				<a href="#" class="rightlitext">이용안내</a>
+			  			</li>
+			  		</ul>
+			  		
+			  		<!-- disc가 사라지지 않아 머리를 싸매던 도중 list-style에 none을 넣어도 되는 걸 발견
+			  		같은 방식으로 하이퍼링크를 걸어둔 텍스트도  text-decoration: none;으로 하니 됐음... -->
+			  		
+			  		<!-- 개인정보처리방침만 따로 설정하니 불편해서 통일 후에 html문서 내에서 굵기 강조 속성 사용-->
+			  		
+			  		<!-- 도대체 ul태그 요소들이 전부 오른쪽으로 쏠린 건지 모르겠다 
+			  		글자 간격은 설정하면 벌어지니 괜찮은데, 이 상자를 어떻게 당겨와야 할까
+			  		혹시나 해서 ul css에 padding을 0으로 해봤는데 해결이 됐다
+			  		근데 padding인데 왜 ul 바깥의 글자들이 움직이는 건지 모르겠다
+			  		하지만 문제는 풀려서 다행이다-->
+			  		
+			  		
+			  	<div class="rightbox2">
+			  	법인명 (상호) : 주식회사 e리빙 | 사업자등록번호 : 000-00-00000
+			  	<a href="#" class="checktext">사업자정보 확인</a>
+			  	<br>
+			  	통신판매업 : 제 0000-서울OO-01000 호
+			  	<br>
+			  	주소 : 멀티캠퍼스 강남빌딩 | 대표이사 : 이준기
+			  	<br>
+			  	채용문의 :
+			  	<a href="www.naver.com" class="checktext">recruit@eliving.com</a>
+			  	<br>
+			  	팩스: 000 - 0000 - 0000
+			  </div><!-- rightbox2 -->
+			  </div><!-- rightbox1 -->
+			  </div><!-- bigbox3 -->
+			  </div><!-- bigbox2 -->
+			  
+			  <div class="lastbox1">
+			  e리빙에서 판매되는 상품 중에는 e리빙에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+			  <br>
+			  마켓플레이스(오픈마켓) 상품의 경우 e리빙은 통신판매중개자로서 통신판매의 당사자가 아닙니다. e리빙은 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
+			  <em class="lastbox2">
+			  © eliving CORP. ALL RIGHTS RESERVED
+			  </em><!-- 이거는 초반에 배운 글씨 기울이는 이태릭 태그, 근데 기울지 않는 듯 -->
+			  
+			  </div>
+	  </div>
+	</footer>
+	</body>
+</html>

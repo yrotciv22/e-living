@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.content-wrapper {
+    height: calc(60vh - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container input[type="submit"],
+.login-container button.signup-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.login-btn {
+    background-color: #02eafd;
+}
+
+.login-btn:hover {
+    background-color: #0198be;
+}
+
+.signup-btn {
+    background-color: #c0c0c0;
+}
+
+.signup-btn:hover {
+    background-color: #808080;
+}

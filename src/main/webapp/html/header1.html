@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="icon" type="image/png" href="#" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/menu3.css">
+	<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+</head>
+
+<body>
+	<!--<div class="wrap">-->
+	<header>
+		<div id="headerBar">
+			<div id="topLogoBox">
+				<a href="../index.html" id="logoItem">
+					<img alt="회사 로고" src="../image/logo.png">
+				</a>
+			</div>
+			<div id="topMenuBox">
+				<div id="topMenuItem">
+					<ul id="topMenuList">
+						<li id="topMenu1">
+							<span id="topLoginName"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+								<a href="#" id="adminInfo">admin님 환영합니다</a>  
+							</span> <!-- 로그인에 성공한 경우 '님 환영합니다' 가리기 -->
+							<span id="topLoginGreet">님 환영합니다</span>
+						</li>
+						<li><a href="#" id="topMenu2">&nbsp;&nbsp;&nbsp;</a></li>
+						<li><a href="#" id="topMenu3">&nbsp;&nbsp;&nbsp;</a></li>
+						<li id="topLogOut"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="middleBar">
+			<div id="logoName">e리빙 ~스마트기기의 모든 것~</div>
+			<div id="searchBar">
+				<input type="text" placeholder="검색어를 입력해주세요" autofocus >
+				<button onclick="">검색</button>
+			</div>
+		</div>
+	</header> <!-- 헤더 박스 종료 -->
+	<nav>
+		<div id="navigationBar">
+			<div id="mainCategoryBox">
+				<button class="dropbtn">
+					<img src="../image/category.png" alt="카테고리">
+				</button>
+				<div class="dropdown-content">
+					<a href="#">전체 상품 보기</a>
+					<a href="#">오픈런 이벤트</a>
+					<a href="#">베스트셀러</a>
+					<a href="#">브랜드별 보기</a>
+					<a href="#">제품별 보기</a>
+					<a href="#">리뷰 많은 상품</a>
+				</div>
+			</div>
+			<div id="mainMenuBox">
+				<ul id="mainMenuItem">
+					<li><a href="#" class="mainMenuIcon"><span id="mainMenu1">스마트폰</span></a></li>
+					<li><a href="#" class="mainMenuIcon"><span id="mainMenu2">스마트워치</span></a></li>
+					<li><a href="#" class="mainMenuIcon"><span id="mainMenu3">이어폰</span></a></li>
+					<li><a href="#" class="mainMenuIcon"><span id="mainMenu4">액세서리</span></a></li>
+					<!-- 해당 버튼 클릭하면 mainMenuItem 리스트 변경 : 삼성, 애플, 구글, 샤오미 -->
+					<li><button id="brandSearchBtn">브랜드별 보기</button></li>
+					<!-- 브랜드별 리스트로 변경된 곳에 hover하면 이미지 뜨게 하기 -->
+				</ul>
+			</div>
+			<div id="mainBtnBox">
+				<ul id="mainBtnItem"> <!-- 로그인에 성공한 경우 로그인에 이름 띄우기 -->
+					<li id="mainBtnCart" class="mainBtn"><a href="#"><span id="mainBtnLoginId">admin님의 </span>admin님의 장바구니</a>
+					</li>
+					<li id="mainBtnboard" class="mainBtn"><a href="projectQnA.html">게시판</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav> <!-- 네비게이션 바 종료 -->
+</body>
+
+</html>
